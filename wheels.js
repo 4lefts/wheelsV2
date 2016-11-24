@@ -34,7 +34,7 @@ var scales = {
 
 var currentScale = scales.major
 
-var fundamental = 200
+var fundamental = 220
 var freqs = currentScale.map(function(elem, index){
 	return this * elem
 }, fundamental)
@@ -91,7 +91,6 @@ function draw(){
 	stroke(180)
 	noFill()
 	ellipseMode(RADIUS)	
-	// ellipse(0, 0, rad1, rad1)
 	circles.forEach(function(circle){
 		circle.drawCircle()
 	})
@@ -110,8 +109,7 @@ function Circle(_t, _r, _rad, _hz, _p, _c){
 
 	this.meter = new Tone.Meter()
 	this.panner = new Tone.Panner(this.pan).connect(verb)
-	// this.panner.start()
-
+	
 	this.tremolo = new Tone.Tremolo({
 		frequency: Math.random() * 0.4,
 		type: "sine",
@@ -130,7 +128,6 @@ function Circle(_t, _r, _rad, _hz, _p, _c){
 			var col = 'rgba(' + this.c + map(this.meter.value, 0, 0.2, 0, 1) +')'
 			console.log(col)
 			fill(color(col))
-			// fill(220, map(this.meter.value, 0, 0.2, 0, 255))
 		} else {
 			noFill()
 		}
