@@ -68,7 +68,7 @@ function setup(){
 function windowResized(){
 	holderSize = holder.size()
 	resizeCanvas(holderSize.width, holderSize.width)
-	rad1 = width / 4	
+	rad1 = width / 4
 	rad2 = (2 * rad1 * (Math.sin(Math.PI / numCircles))) / 2
 }
 
@@ -90,7 +90,7 @@ function draw(){
 	translate(width/2, height/2)
 	stroke(180)
 	noFill()
-	ellipseMode(RADIUS)	
+	ellipseMode(RADIUS)
 	circles.forEach(function(circle){
 		circle.drawCircle()
 	})
@@ -109,7 +109,7 @@ function Circle(_t, _r, _rad, _hz, _p, _c){
 
 	this.meter = new Tone.Meter()
 	this.panner = new Tone.Panner(this.pan).connect(verb)
-	
+
 	this.tremolo = new Tone.Tremolo({
 		frequency: Math.random() * 0.4,
 		type: "sine",
