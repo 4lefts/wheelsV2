@@ -95,6 +95,16 @@ function draw(){
 		circle.drawCircle()
 	})
 	pop()
+	writeLabel('//wheels', 48)
+}
+
+function writeLabel(txt, sz){
+	push()
+	noStroke()
+	fill(100)
+	textSize(sz)
+	text(txt, 64, height - 64)
+	pop()
 }
 
 function Circle(_t, _r, _rad, _hz, _p, _c){
